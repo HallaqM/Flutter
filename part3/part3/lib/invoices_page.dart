@@ -9,7 +9,7 @@ class InvoicesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All customers'),
+        title: const Text('All customers'),
       ),
       body: ListView.builder(
         itemCount: invoices.length,
@@ -24,7 +24,7 @@ class InvoicesPage extends StatelessWidget {
               tileColor: Colors.blue[100],
               leading: Text(
                 invoices[index].cName,
-                style: TextStyle(fontSize: 26),
+                style: const TextStyle(fontSize: 26),
               ),
             ),
           );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'details_page.dart';
 import 'main.dart';
 
 class InvoicesPage extends StatelessWidget {

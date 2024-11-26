@@ -35,32 +35,32 @@ class _MainScreenState extends State<MainScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                    const SizedBox(height: 50,),
-                  Text("Products: "),
+                  const Text("Products: "),
                   ElevatedButton(onPressed: () {
                     showDialog(context: context,
                     builder: (context) => AlertDialog(
-                      title: Text("Product Info"),
+                      title: const Text("Product Info"),
                       content: SingleChildScrollView(
                         child:Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             TextField(
                               controller: pNameController,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 labelText: "Product Name",
                               ),
                             ),
                             TextField(
                               keyboardType: TextInputType.number,
                               controller: quantityController,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 labelText: "Quantity"
                               ),
                             ),
                             TextField(
                               keyboardType: TextInputType.number,
                               controller: priceController,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 labelText: "Price",
                               ),
                             )
@@ -84,21 +84,21 @@ class _MainScreenState extends State<MainScreen> {
                                   priceController.clear();
                                   Navigator.pop(context);
                                 } catch (e) {
-                                  SnackBar snackBar = SnackBar(
+                                  SnackBar snackBar = const SnackBar(
                                       content: Text(
                                           'please fill all fields correctly'));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                 }
                               },
-                              child: Text('add')),   
+                              child: const Text('add')),   
                               ElevatedButton(onPressed: () {
                                 Navigator.pop(context);
-                              }, child: Text("Cancel"))          
+                              }, child: const Text("Cancel"))          
                 ]),
                 );
                   
-                  }, child: Text("Add Product"))
+                  }, child: const Text("Add Product"))
                 ],
               ),
               Expanded(
@@ -136,12 +136,12 @@ class _MainScreenState extends State<MainScreen> {
                     products = [];
                     setState(() {});
                   },
-                  child: Text('add invoice')),
+                  child: const Text('add invoice')),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/invoices_page');
                   },
-                  child: Text('show all invoices')),
+                  child: const Text('show all invoices')),
             ],
               ),
               

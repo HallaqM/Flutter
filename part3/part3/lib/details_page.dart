@@ -12,7 +12,7 @@ class DetailsPage extends StatelessWidget {
         title: Text(invoices[InvoicesPage.customerIndex].cName),
       ),
       body: Column(children: [
-        Text(
+        const Text(
           'Products: ',
           style: TextStyle(fontSize: 25),
         ),

@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => InvoiceApp(),
-        '/invoices_page': (context) => InvoicesPage(),
-        '/details_page': (context) => DetailsPage(),
+        '/': (context) => const InvoiceApp(),
+        '/invoices_page': (context) => const InvoicesPage(),
+        '/details_page': (context) => const DetailsPage(),
       },
     );
   }
@@ -49,17 +49,17 @@ class _InvoiceAppState extends State<InvoiceApp> {
         children: [
           TextField(
             controller: cNameController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Customer Name',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
+              const Text(
                 'Products: ',
                 style: TextStyle(fontSize: 22),
               ),
@@ -68,28 +68,28 @@ class _InvoiceAppState extends State<InvoiceApp> {
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        title: Text('Product Info'),
+                        title: const Text('Product Info'),
                         content: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               TextField(
                                 controller: pNameController,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'product name',
                                 ),
                               ),
                               TextField(
                                 keyboardType: TextInputType.number,
                                 controller: quantityController,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'quantity',
                                 ),
                               ),
                               TextField(
                                 keyboardType: TextInputType.number,
                                 controller: priceController,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'price',
                                 ),
                               ),
@@ -113,24 +113,24 @@ class _InvoiceAppState extends State<InvoiceApp> {
                                   priceController.clear();
                                   Navigator.pop(context);
                                 } catch (e) {
-                                  SnackBar snackBar = SnackBar(
+                                  SnackBar snackBar = const SnackBar(
                                       content: Text(
                                           'please fill all fields correctly'));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                 }
                               },
-                              child: Text('add')),
+                              child: const Text('add')),
                           ElevatedButton(
                               onPressed: () {
                                 Navigator.pop(context);
                               },
-                              child: Text('cancel')),
+                              child: const Text('cancel')),
                         ],
                       ),
                     );
                   },
-                  child: Text('add product')),
+                  child: const Text('add product')),
             ],
           ),
           Expanded(
@@ -150,7 +150,7 @@ class _InvoiceAppState extends State<InvoiceApp> {
                         products.removeAt(index);
                       });
                     },
-                    icon: Icon(Icons.delete_forever),
+                    icon: const Icon(Icons.delete_forever),
                   ),
                 ),
               );
@@ -170,15 +170,15 @@ class _InvoiceAppState extends State<InvoiceApp> {
                     products = [];
                     setState(() {});
                   },
-                  child: Text('add invoice')),
+                  child: const Text('add invoice')),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/invoices_page');
                   },
-                  child: Text('show all invoices')),
+                  child: const Text('show all invoices')),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
         ],
